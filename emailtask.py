@@ -9,7 +9,7 @@ import re
 
 def emailtasl():
     imap = imaplib.IMAP4_SSL('outlook.office365.com')
-    imap.login('ashu098765432@outlook.com', 'AshuGupta18') 
+    imap.login('youremail@outlook.com', 'password') 
     imap.select('Inbox')
     _, search_data = imap.search(None, 'ALL')
     for num in search_data[0].split():
@@ -37,26 +37,26 @@ def emailtasl():
                 received = email_message.get("Received")
                 # print(received)
                 if 'rupeshsc1999@outlook.com' in from_addr:
-                    toaddr = 'anand.singh.act@outlook.com'
-                    fromaddr = "ashu098765432@outlook.com"
+                    toaddr = 'a.singh.act@outlook.com'
+                    fromaddr = "as098765432@outlook.com"
                     mss = "Escalation Mail.Please Look into it ASAP"
                     alll = mss#+' '+email_data
                     message_text = email.message_from_string(alll)
                     message = message_text
                     smtp = smtplib.SMTP('smtp.office365.com', 587)
                     smtp.starttls()
-                    smtp.login('ashu098765432@outlook.com','AshuGupta18')
+                    smtp.login('as098765432@outlook.com','AshuGupta18')
                     smtp.sendmail(fromaddr, toaddr, message.as_string())
                     print("Forward Mails Sent successfully")
                     smtp.quit()
-                if 'anand.singh.act@outlook.com' in from_addr:
+                if 'a.singh.act@outlook.com' in from_addr:
                     server =imaplib.IMAP4_SSL('outlook.office365.com',993)
-                    server.login('ashu098765432@outlook.com','AshuGupta18')
+                    server.login('as098765432@outlook.com','AshuGupta18')
                     server.select()
                     typ, data = server.search(None, '(SUBJECT "")')
                     mail_ids = data[0]
                     id_list = mail_ids.split()
-                    path = r"C:\Users\Ashu\Desktop\Sequalstring\Emailtask"
+                    path = r"C:\Users\As\Desktop\Sequalstring\Emailtask"
                     for num in data[0].split():
                         typ, data = imap.fetch(num, '(RFC822)' )
                         raw_email = data[0][1]
@@ -82,36 +82,36 @@ def emailtasl():
                                     em_mssg = "Your Mail has been received and all the necessary docs have been downloaded"
                                     massg = email.message_from_string(em_mssg,)
                                     massage = massg
-                                    aps.login('ashu098765432@outlook.com','AshuGupta18')
-                                    aps.sendmail('ashu098765432@outlook.com','anand.singh.act@outlook.com', massage.as_string())
+                                    aps.login('as098765432@outlook.com','Pass')
+                                    aps.sendmail('as098765432@outlook.com','a.singh.act@outlook.com', massage.as_string())
                                     print("Reply Send")
                     server.logout
                     print("Attachment downloaded from mail")
                 else:
-                    if 'rupeshsc1999@outlook.com' not in from_addr and 'anand.singh.act@outlook.com' not in from_addr:
+                    if 'rupeshsc1999@outlook.com' not in from_addr and 'a.singh.act@outlook.com' not in from_addr:
                         if subject == 'RPA':
-                            toaddr = 'komaljaiswal28@outlook.com'
-                            fromaddr = "ashu098765432@outlook.com"
+                            toaddr = 'kj@outlook.com'
+                            fromaddr = "as098765432@outlook.com"
                             mssges = "This mail is related to    RPA"
                             email_dat = mssges#+' '+email_data
                             message_text = email.message_from_string(email_dat)
                             message1 = message_text
                             smtp = smtplib.SMTP('smtp.office365.com', 587)
                             smtp.starttls()
-                            smtp.login('ashu098765432@outlook.com','AshuGupta18')
+                            smtp.login('as098765432@outlook.com','pass')
                             smtp.sendmail(fromaddr, toaddr, message1.as_string())
                             print("RPA Mails Sent successfully")
                             smtp.quit()
                         if subject == 'Data Science' or subject == 'Artificial Intelligence' or subject == 'Machine learning':
-                            toaddr = 'apekshagorane@outlook.com'
-                            fromaddr = "ashu098765432@outlook.com"
+                            toaddr = 'apeane@outlook.com'
+                            fromaddr = "as098765432@outlook.com"
                             mssges = "This mail is related to Analytics/AI"
                             email_da = mssges#+' '+email_data
                             message_text = email.message_from_string(email_da)
                             message2 = message_text
                             smtp = smtplib.SMTP('smtp.office365.com', 587)
                             smtp.starttls()
-                            smtp.login('ashu098765432@outlook.com','AshuGupta18')
+                            smtp.login('as098765432@outlook.com','Pass')
                             smtp.sendmail(fromaddr, toaddr, message2.as_string())
                             print("AI and ML Mails Sent successfully")
                             smtp.quit()
