@@ -13,7 +13,7 @@ cursor = conn.cursor()
 # cursor.execute(query1)
 # conn.commit()
 
-sys.path.append(r"C:\Users\Ashu\AppData\Local\Programs\Python\Python310\Lib\site-packages\aws_lib_")
+sys.path.append(r"C:\Users\As\AppData\Local\Programs\Python\Python310\Lib\site-packages\aws_lib_")
 
 from aws_lib_.aws_ocr_main import main_call
 
@@ -23,7 +23,7 @@ Pdf_Data = {}
 l=['(',')','.','/','-',',','%','&']
 
 def Trigger(input_path):
-    output_path=r'C:\Users\Ashu\Desktop\Sequalstring\excelfinaltask\folder9'#out put path.......
+    output_path=r'C:\Users\As\Desktop\Sequalstring\excelfinaltask\folder9'#out put path.......
     text1=''
     os.chdir(output_path)
     # main_call(input_path)
@@ -42,11 +42,11 @@ def Trigger(input_path):
                 text1=text1+lines
                 # print(text1)
 
-    # for file in os.listdir(r"C:\Users\Ashu\Desktop\Sequalstring\excelfinaltask\outputttt"):
-    #    os.remove(r"C:\Users\Ashu\Desktop\Sequalstring\excelfinaltask\outputttt\\"+file)
+    # for file in os.listdir(r"C:\Users\As\Desktop\Sequalstring\excelfinaltask\outputttt"):
+    #    os.remove(r"C:\Users\As\Desktop\Sequalstring\excelfinaltask\outputttt\\"+file)
 
     return text1
-# Trigger(r"C:\Users\Ashu\Desktop\Sequalstring\excelfinaltask\allpdf\img20220127_15213615.pdf")
+# Trigger(r"C:\Users\As\Desktop\Sequalstring\excelfinaltask\allpdf\img20220127_15213615.pdf")
 
 
 def extract_all():
@@ -150,6 +150,6 @@ def extract_all():
             # conn.commit()
 
     df=pd.read_sql_query('select * from rajni',con=conn)
-    df.to_excel(r'C:\Users\Ashu\Desktop\Sequalstring\excelfinaltask\Rajni.xlsx',index=False)
+    df.to_excel(r'C:\Users\As\Desktop\Sequalstring\excelfinaltask\Rajni.xlsx',index=False)
 extract_all()
 

@@ -45,13 +45,13 @@ def emailtasl():
                     message = message_text
                     smtp = smtplib.SMTP('smtp.office365.com', 587)
                     smtp.starttls()
-                    smtp.login('as098765432@outlook.com','AshuGupta18')
+                    smtp.login('as098765432@outlook.com','Pass')
                     smtp.sendmail(fromaddr, toaddr, message.as_string())
                     print("Forward Mails Sent successfully")
                     smtp.quit()
                 if 'a.singh.act@outlook.com' in from_addr:
                     server =imaplib.IMAP4_SSL('outlook.office365.com',993)
-                    server.login('as098765432@outlook.com','AshuGupta18')
+                    server.login('as098765432@outlook.com','Pass')
                     server.select()
                     typ, data = server.search(None, '(SUBJECT "")')
                     mail_ids = data[0]
